@@ -123,24 +123,46 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background-color: rgb(3, 3, 49);
+}
+
 #header {
-  background-color: red;
   height: 50px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
+  background-color: rgb(2, 2, 8);
 }
 
 .menu {
-  flex-grow: 0.05;
   margin-left: 10px;
   height: 100%;
-  text-align: center;
   line-height: 50px;
   border-radius: 5px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.menu:hover {
-  background-color: beige;
+.menu.move {
+  transform: scale(2, 1);
+}
+
+#corona {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 400px;
+  transition: margin-top 0.5s linear, width 0.1s, height 0.1s;
+}
+
+#corona2 {
+  width: 40px;
+  height: 40px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
