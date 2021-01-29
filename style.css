@@ -159,6 +159,19 @@ body {
   width: 50px;
   height: 50px;
   display: none;
+  transition: display 0.5s linear 1s;
+}
+
+#click {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#arrow {
+  color: white;
+  height: 20px;
+  width: auto;
+  transition: height 0.3s linear;
 }
 
 #corona {
