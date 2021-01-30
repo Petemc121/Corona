@@ -6,11 +6,18 @@ navs = document.getElementsByClassName('nav');
 arrow = document.getElementById('arrow');
 click = document.getElementById('click');
 graph = document.getElementById('graph');
-death = document.getElementById('death');
 syringe = document.getElementById('syringe');
 news = document.getElementById('news');
 
-function chg(element) {
+window.onload = function() {
+  titleInit(menu1)
+  title2Init(menu2)
+  imageInit(corona1)
+  arrowInit()
+};
+
+
+function growPlusNav(element) {
   element.style.width = "450px";
   element.style.height = "450px";
   arrow.style.display = "none"
@@ -23,7 +30,7 @@ function chg(element) {
   }
 }
 
-function chg2(element) {
+function shrinkMinusNav(element) {
   element.style.width = "300px";
   element.style.height = "300px";
   arrow.style.display = "block"
@@ -54,32 +61,102 @@ function arrowInit() {
 
 }
 
+function navPulse(element) {
+ element.addEventListener('mouseover', function() { var int1 =setInterval(function() {element.style.height = "55px"}, 200)
+ var int2 = setInterval(function() {element.style.height = "50px"}, 400) 
+
+ element.addEventListener('mouseout', function() { 
+   clearInterval(int1);
+   clearInterval(int2);
+ })
+
+});
+}
+
+navPulse(graph)
+navPulse(syringe);
+navPulse(news)
+
+
 
 
 document.addEventListener('click', function(event) {
-  const withinBoundaries = event.composedPath().includes(corona1);
-  const withinBoundaries2 = event.composedPath().includes(graph);
-  const withinBoundaries3 = event.composedPath().includes(death);
-  const withinBoundaries4 = event.composedPath().includes(syringe);
-  const withinBoundaries5 = event.composedPath().includes(news);
+  let withinBoundaries = event.composedPath().includes(corona1);
+  let withinBoundaries2 = event.composedPath().includes(graph);
+  let withinBoundaries3 = event.composedPath().includes(syringe);
+  let withinBoundaries4 = event.composedPath().includes(news);
 
   
   
-  if(withinBoundaries || withinBoundaries2 || withinBoundaries3 || withinBoundaries4 || withinBoundaries5 ) {
-  chg(corona1)
+  if(withinBoundaries || withinBoundaries2 || withinBoundaries3 || withinBoundaries4 ) {
+  growPlusNav(corona1)
   }else {
-    chg2(corona1)
+    shrinkMinusNav(corona1)
   } 
  });
+
+ function graphTab() {
+
+ }
+
+graphTab = document.getElementById('graphTab');
+syringeTab = document.getElementById('syringeTab');
+newsTab = document.getElementById('newsTab');
+invisDiv1 = document.getElementById('invisDiv1');
+
+
+ graph.addEventListener('click', function() {
+
+   graphTab.style.transform = "translatey(-100%)";
+   invisDiv1.style.display= 'block';
+
+   invisDiv1.addEventListener('click',function() {
+   invisDiv1.style.display= 'none';
+   graphTab.style.transform = "translatey(100%)";
+
+
+   })
+
+    
+     
+});
+
+
+
+ syringe.addEventListener('click', function() {
+
+  syringeTab.style.transform = "translatex(100%)";
+   invisDiv2.style.display= 'block';
+
+   invisDiv2.addEventListener('click',function() {
+   invisDiv2.style.display= 'none';
+   syringeTab.style.transform = "translatex(-100%)";
+
+
+   })
+   
+})
+
+
+
+news.addEventListener('click', function() {
+
+   newsTab.style.transform = "translatex(-100%)";
+   invisDiv3.style.display= 'block';
+
+   invisDiv3.addEventListener('click',function() {
+   invisDiv3.style.display= 'none';
+   newsTab.style.transform = "translatex(100%)";
+
+
+   })
+   
+})
+
+
 
    
 
 
-  window.onload = function() {
-    titleInit(menu1)
-    title2Init(menu2)
-    imageInit(corona1)
-    arrowInit()
-  };
-
+ 
   
