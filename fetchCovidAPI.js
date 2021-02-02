@@ -11,11 +11,23 @@ fetch("https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATES
 })
 .then(data => {
   console.log(data)
-  let apiDIV = document.getElementById("data")
+  let countrySelect = document.getElementById("countrySelect")
+  if (countrySelect.childNodes.length == 0) {
   for(i=0;i<data.length;i++){
-   apiDIV.innerHTML = "<p>" + apiDIV.innerHTML + data[i].infected + "</p>" ;
+    countrySelect.innerHTML = countrySelect.innerHTML +  "<option id='" + i + "' value='" + i + "'>" + data[i].country + "</option>" ;
   }
+
+  countrySelect.addEventListener('change', function() {
+    infectedStat = document.getElementById('infectedStat');
+    recoveredStat = document.getElementById('recoveredStat');
+    deceasedStat = document.getElementById('deceasedStat');
   
+    infectedStat.innerHTML = data[countrySelect.value].infected;
+    recoveredStat.innerHTML = data[countrySelect.value].recovered;
+    deceasedStat.innerHTML = data[countrySelect.value].deceased;
+  })
+  
+}
 
 })
 .catch(err => {
