@@ -6,7 +6,7 @@ navs = document.getElementsByClassName('nav');
 arrow = document.getElementById('arrow');
 click = document.getElementById('click');
 graph = document.getElementById('graph');
-syringe = document.getElementById('syringe');
+uk = document.getElementById('uk');
 news = document.getElementById('news');
 
 window.onload = function() {
@@ -61,9 +61,9 @@ function arrowInit() {
 
 }
 
-function navPulse(element) {
- element.addEventListener('mouseover', function() { var int1 =setInterval(function() {element.style.height = "55px"}, 200)
- var int2 = setInterval(function() {element.style.height = "50px"}, 400) 
+function navPulse(element, init, final) {
+ element.addEventListener('mouseover', function() { var int1 =setInterval(function() {element.style.height = final}, 200)
+ var int2 = setInterval(function() {element.style.height = init}, 400) 
 
  element.addEventListener('mouseout', function() { 
    clearInterval(int1);
@@ -73,9 +73,10 @@ function navPulse(element) {
 });
 }
 
-navPulse(graph)
-navPulse(syringe);
-navPulse(news)
+
+navPulse(graph, "50px", "55px")
+navPulse(uk, "40px", "45px");
+navPulse(news, "50px", "55px")
 
 
 
@@ -83,7 +84,7 @@ navPulse(news)
 document.addEventListener('click', function(event) {
   let withinBoundaries = event.composedPath().includes(corona1);
   let withinBoundaries2 = event.composedPath().includes(graph);
-  let withinBoundaries3 = event.composedPath().includes(syringe);
+  let withinBoundaries3 = event.composedPath().includes(uk);
   let withinBoundaries4 = event.composedPath().includes(news);
 
   
@@ -95,9 +96,7 @@ document.addEventListener('click', function(event) {
   } 
  });
 
- function graphTab() {
 
- }
 
 graphTab = document.getElementById('graphTab');
 syringeTab = document.getElementById('syringeTab');
@@ -123,7 +122,7 @@ invisDiv1 = document.getElementById('invisDiv1');
 
 
 
- syringe.addEventListener('click', function() {
+ uk.addEventListener('click', function() {
 
   syringeTab.style.transform = "translatex(100%)";
    invisDiv2.style.display= 'block';
