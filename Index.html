@@ -33,6 +33,8 @@
       
     </div>
 
+   
+
 
 
     <div class="centerCon">
@@ -58,23 +60,42 @@
 
   <div id="syringeTab">
 
+    <!-- <div class="center">
+      <div id="circle-border">
+      <div id = "circle"></div>
+      </div>
+    </div> -->
+
+    <div class="progress">
+      <svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+        <circle class="progress-circle-back"
+              cx="80" cy="80" r="74"></circle>
+          <circle class="progress-circle-prog"
+                  cx="80" cy="80" r="74"></circle>
+      </svg>
+      <div class="progress-text" data-progress="0">0%</div>
+  </div>	
+
+
   <div id=stats>
     <div class="centerCon">
+
+          
 
           
             <div class="center3">
 
               <div class="center4">
               <p class="statsT">Recovered</p>
-              <p class="statsD" id=recoveredStat>sd</p>
+              <p class="statsD" id=recoveredStat></p>
               </div>
               <div class="center4">
               <p class="statsT">Infected</p>
-              <p class="statsD" id="infectedStat">sd</p>
+              <input class="statsD" id="infectedStat"></input>
               </div>
               <div class="center4">
               <p class="statsT">Deceased</p>
-              <p class="statsD" class="deceasedStat">sdc</p>
+              <p class="statsD" id="deceasedStat"></p>
               </div>
 
             </div>
