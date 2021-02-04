@@ -211,10 +211,112 @@ body {
   border-radius: 5px;
   transition: transform 0.5s linear;
 }
+/* 
+#circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: #8a2be2;
+  border: 10px solid red;
+  position: relative;
+  top: 150px;
+  transition: all linear 0.25s;
+}
+
+#circle:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  left: -18px;
+  right: -18px;
+  bottom: -18px;
+  border: 10px solid green;
+  border-radius: 109px;
+  transition: all linear 0.25s;
+}
+
+#circle:after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: -26px;
+  left: -26px;
+  right: -26px;
+  bottom: -26px;
+  border: 10px solid #ffea00;
+  border-radius: 113px;
+  transition: all linear 0.25s;
+} */
+
+/* #circle {
+  position: relative;
+  top: 7.5px;
+  left: 7.5px;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: blueviolet;
+}
+
+#circle-border {
+  position: relative;
+  text-align: center;
+  top: 150px;
+  width: 165px;
+  height: 165px;
+  border-radius: 100%;
+  background: linear-gradient(270deg, blueviolet 50%, transparent 50%),
+    linear-gradient(0deg, blueviolet 50%, black 50%);
+} */
+
+/* Circle animation progress 3*/
+
+.progress {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  top: 150px;
+  left: 50%;
+  margin: -80px 0 0 -80px;
+  background-color: blueviolet;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+  margin-top: -40px;
+}
+
+.progress-circle-back {
+  fill: none;
+  stroke: blueviolet;
+  stroke-width: 10px;
+}
+
+.progress-circle-prog {
+  fill: none;
+  stroke: #7e3451;
+  stroke-width: 10px;
+  stroke-dasharray: 0 999;
+  stroke-dashoffset: 0px;
+  transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.progress-text {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* Circle animation progress 3 end*/
 
 #countrySelect {
   position: relative;
-  top: 450px;
+  top: 250px;
   height: 40px;
   width: auto;
   text-align: center;
@@ -225,7 +327,7 @@ body {
 
 #stats {
   position: relative;
-  top: 400px;
+  top: 200px;
 }
 .statsT {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -250,10 +352,10 @@ body {
 
 #newsTab {
   height: 100vw;
-  width: 40%;
+  width: 50%;
   position: absolute;
   top: 0px;
-  right: -40%;
+  right: -50%;
   background-color: rgb(148, 21, 59);
   border-radius: 5px;
   transition: transform 0.5s linear;
