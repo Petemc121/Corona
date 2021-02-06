@@ -275,29 +275,44 @@ body {
 
 .progress {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 100%;
   cursor: pointer;
   top: 150px;
-  left: 50%;
-  margin: -80px 0 0 -80px;
+  align-items: center;
   background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .progress-circle {
   transform: rotate(-90deg);
   margin-top: -40px;
+  margin-bottom: 20px;
 }
 
 .progress-circle-back {
   fill: none;
-  stroke: blueviolet;
+  stroke: rgb(241, 225, 4);
   stroke-width: 10px;
+  stroke-dasharray: 0 999;
+  stroke-dashoffset: 0px;
+  transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.progress-circle-mid {
+  fill: none;
+  stroke: rgb(151, 1, 1);
+  stroke-width: 10px;
+  stroke-dasharray: 0 999;
+  stroke-dashoffset: 0px;
+  transition: stroke-dasharray 0.7s linear 0s;
 }
 
 .progress-circle-prog {
   fill: none;
-  stroke: #7e3451;
+  stroke: rgb(44, 175, 11);
   stroke-width: 10px;
   stroke-dasharray: 0 999;
   stroke-dashoffset: 0px;
@@ -307,39 +322,72 @@ body {
 .progress-text {
   width: 100%;
   position: absolute;
-  top: 60px;
+  top: 200px;
+  right: 20%;
   text-align: center;
   font-size: 2em;
+}
+
+.progress-text2 {
+  width: 100%;
+  position: absolute;
+  top: 200px;
+  left: 20%;
+  text-align: center;
+  font-size: 2em;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Circle animation progress 3 end*/
 
 #countrySelect {
   position: relative;
-  top: 250px;
+  top: 200px;
   height: 40px;
   width: auto;
   text-align: center;
-  border-radius: 5px;
-  background-color: rgb(255, 242, 166);
+  border-radius: 10px;
+  background-color: white;
+  outline: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #stats {
   position: relative;
-  top: 200px;
+  top: 150px;
 }
 .statsT {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: white;
+}
+
+.title {
+  color: black !important;
+}
+#recoveredT {
+  color: rgb(44, 175, 11);
+}
+
+#infectedT {
+  color: rgb(241, 225, 4);
+}
+
+#deceasedT {
+  color: rgb(151, 1, 1);
 }
 
 .statsD {
   color: white;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 #invisDiv2 {
@@ -409,6 +457,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 70%;
+  margin-top: 20px;
 }
 
 .center4 {
