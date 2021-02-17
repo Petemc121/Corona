@@ -5,8 +5,8 @@ menu2 = document.getElementById('menu2');
 navs = document.getElementsByClassName('nav');
 arrow = document.getElementById('arrow');
 click = document.getElementById('click');
-graph = document.getElementById('graph');
 uk = document.getElementById('uk');
+globe = document.getElementById('globe');
 news = document.getElementById('news');
 
 window.onload = function() {
@@ -74,8 +74,8 @@ function navPulse(element, init, final) {
 }
 
 
-navPulse(graph, "50px", "55px")
-navPulse(uk, "40px", "45px");
+navPulse(uk, "40px", "45px")
+navPulse(globe, "40px", "45px");
 navPulse(news, "50px", "55px")
 
 
@@ -83,7 +83,7 @@ navPulse(news, "50px", "55px")
 
 document.addEventListener('click', function(event) {
   let withinBoundaries = event.composedPath().includes(corona1);
-  let withinBoundaries2 = event.composedPath().includes(graph);
+  let withinBoundaries2 = event.composedPath().includes(globe);
   let withinBoundaries3 = event.composedPath().includes(uk);
   let withinBoundaries4 = event.composedPath().includes(news);
 
@@ -104,7 +104,7 @@ newsTab = document.getElementById('newsTab');
 invisDiv1 = document.getElementById('invisDiv1');
 
 
- graph.addEventListener('click', function() {
+ uk.addEventListener('click', function() {
 
    graphTab.style.transform = "translatey(-100%)";
    invisDiv1.style.display= 'block';
@@ -122,7 +122,7 @@ invisDiv1 = document.getElementById('invisDiv1');
 
 
 
- uk.addEventListener('click', function() {
+ globe.addEventListener('click', function() {
 
   syringeTab.style.transform = "translatex(100%)";
    invisDiv2.style.display= 'block';
