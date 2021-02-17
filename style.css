@@ -175,8 +175,8 @@ body {
   transition: height 0.3s linear;
 }
 
-#graph {
-  height: 50px;
+#uk {
+  height: 40px;
   width: auto;
   transition: height 0.2s linear;
 }
@@ -186,9 +186,16 @@ body {
   height: 50%;
   position: absolute;
   bottom: -50%;
-  background-color: red;
+  background-color: rgb(4, 123, 160);
   border-radius: 5px;
   transition: transform 0.5s linear;
+}
+
+#chart {
+  width: 80%;
+  height: 320px;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
 #invisDiv1 {
@@ -417,7 +424,7 @@ p {
   top: 0px;
 }
 
-#uk {
+#globe {
   height: 40px;
   width: auto;
   transition: height 0.2s linear;
