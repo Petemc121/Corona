@@ -14,19 +14,35 @@ fetch( 'https://api.coronavirus.data.gov.uk/v1/data?' +
     yArray = []
   function pushData(array, value) {
     for(i=0;i<data.data.length;i++) {
-    array = array.push(value);
-    return array;
+    newArray = array.push(data.data[i][value]);
+    
+    }
+
+    return newArray;
+  }
+
+  
+  var layout = {
+    autosize: true,
+    width: 500,
+    height: 300,
+    margin: {
+      l: 50,
+      r: 50,
+      b: 100,
+      t: 100,
+      pad: 4
     }
   }
-  
-  
+  pushData(xArray, 'date')
+  pushData(yArray, 'newCases')
     Plotly.plot('chart', [{
-        x: pushData(xArray, data.data[i].date),
-        y: pushData(yArray, data.data[i].newCases),
+        x: xArray,
+        y: yArray,
         type:'line'
-      }])
+      }] , layout)
   
-console.log(data.data.length);
+
 
 })
 .catch(err => {
